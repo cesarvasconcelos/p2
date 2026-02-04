@@ -28,6 +28,7 @@ Os principais materiais de estudo usados na disciplina são os seguintes livros:
 Outras fontes de leitura recomendadas:
 
 - [Dev.java](https://dev.java/learn/) - O portal oficial para aprender Java com tutoriais atualizados.
+- [Oracle Java Foundations](https://mylearn.oracle.com/ou/learning-path/java-explorer/79726) - Um curso introdutório sobre Java, fornecido pela Oracle (requer criação de conta).
 - [Java Tutorial - Oracle](https://docs.oracle.com/javase/tutorial/) - Documentação técnica e tutoriais da Oracle.
 
 ## Suporte ferramental básico
