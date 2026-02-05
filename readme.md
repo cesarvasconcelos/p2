@@ -11,9 +11,9 @@ Há trechos de código incompletos, com erros e/ou outros problemas de implement
 
 A disciplina aborda uma introdução ao paradigma orientado a objetos, estruturas de dados clássicas e testes unitários de software.
 
-- **Orientação a Objetos**: introdução ao paradigma OO e a uma linguagem de programação orientada a objetos, abrangendo _Classes_, _Objetos_, _Herança_, _Polimorfismo_, _Encapsulamento_, _Abstração_ e boas práticas de construção de software orientado a objetos.
+- **Orientação a Objetos**: introdução ao paradigma OO e a uma linguagem de programação orientada a objetos, abrangendo _Classes_, _Objetos_, _Herança_, _Composição_, _Polimorfismo_, _Encapsulamento_, _Abstração_ e boas práticas de construção de software orientado a objetos.
 - **Testes Unitários e TDD**: fundamentos de testes unitários e introdução ao desenvolvimento guiado por testes (TDD) para garantir que as implementações sejam corretas e funcionem conforme esperado.
-- **Estruturas de Dados**: uso das coleções padrão do Java, mostrando como utilizar implementações das interfaces [**List**](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html), [**Set**](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html), [**Map**](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html), [**Deque**](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Deque.html) e [**Queue**](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Queue.html) (pilha e fila), incluindo as implementações baseadas em árvore ([TreeMap](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/TreeMap.html), [TreeSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/TreeSet.html)).
+- **Estruturas de Dados**: uso das coleções padrão do Java, mostrando como utilizar implementações já prontas das interfaces [**List**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html), [**Set**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html), [**Map**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html), [**Deque**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Deque.html) e [**Queue**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Queue.html) (pilha e fila), incluindo aquelas baseadas em árvore ([**TreeMap**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/TreeMap.html), [**TreeSet**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/TreeSet.html)).
 - **Algoritmos Fundamentais**: estudo de algoritmos de pesquisa e ordenação de dados.
 
 ⚠️ **Atenção!** Devido à extensão da linguagem Java, o conteúdo visto em sala de aula focará nos conceitos essenciais da disciplina. O aprofundamento dos detalhes técnicos e recursos adicionais da linguagem é de responsabilidade do estudante.</span>
@@ -21,14 +21,14 @@ A disciplina aborda uma introdução ao paradigma orientado a objetos, estrutura
 ## Material de Referência
 
 Os principais materiais de estudo usados na disciplina são os seguintes livros:
-- [Java: A Beginner's Guide (opção sugerida)](https://a.co/d/0a4xvaW7) - Um bom guia para começar a programar em Java.
+- [Java: A Beginner's Guide](https://a.co/d/0a4xvaW7) (opção sugerida) - Um excelente guia para começar a programar em Java.
 - [Head First Java (Use a Cabeça! Java)](https://a.co/d/06GxmXsg) - Uma abordagem visual e prática para aprender Java e OO.
-- [Core Java, Volume I: Fundamentals](https://www.informit.com/store/core-java-volumei-fundamentals-9780135558577) - Um guia clássico para a linguagem Java.
+- [Core Java, Volume I: Fundamentals](https://www.informit.com/store/core-java-volumei-fundamentals-9780135558577) - Um livro clássico para aprender Java com boa cobertura dos conceitos fundamentais.
 
 Outras fontes de leitura recomendadas:
 
-- [Dev.java](https://dev.java/learn/) - O portal oficial para aprender Java com tutoriais atualizados.
-- [Oracle Java Foundations](https://mylearn.oracle.com/ou/learning-path/java-explorer/79726) - Um curso introdutório sobre Java, fornecido pela Oracle (requer criação de conta).
+- [Dev.java](https://dev.java/learn/) - Um portal para aprender Java com tutoriais atualizados.
+- [Oracle Java Foundations](https://mylearn.oracle.com/ou/learning-path/java-explorer/79726) - Um curso introdutório sobre Java, fornecido de forma gratuita pela Oracle (requer registro/criação de conta).
 - [Java Tutorial - Oracle](https://docs.oracle.com/javase/tutorial/) - Documentação técnica e tutoriais da Oracle.
 
 ## Suporte ferramental básico
@@ -36,7 +36,7 @@ Outras fontes de leitura recomendadas:
 Para acompanhar as aulas e realizar os exercícios, recomenda-se:
 
 - Um navegador (Firefox, Brave, Google Chrome, etc.)
-- Uma distribuição OpenJDK (e.g, [Amazon Corretto](https://aws.amazon.com/corretto/) ou [Eclipse Temurin](https://adoptium.net/temurin/)) - podem ser instaladas via [SDKMAN](https://sdkman.io/jdks/)
+- Uma distribuição OpenJDK v21+ (e.g, [Amazon Corretto](https://aws.amazon.com/corretto/) ou [Eclipse Temurin](https://adoptium.net/temurin/)) - podem ser instaladas via [SDKMAN](https://sdkman.io/jdks/)
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) ou [Visual Studio Code](https://code.visualstudio.com/) / [TRAE](https://trae.ai/)
 - [Apache Maven](https://maven.apache.org/) para gerência de dependências, que também pode ser instalado via [SDKMAN](https://sdkman.io/sdks/maven/)
 - [JUnit 6](https://junit.org/) e [AssertJ](https://assertj.github.io/doc/) para a prática de testes
