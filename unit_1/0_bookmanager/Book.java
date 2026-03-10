@@ -1,17 +1,18 @@
+import java.util.Objects;
 import java.util.StringJoiner;
 
 public class Book {
     private long code;
     private String title;
     private String author;
-    private String type;
+    private String format;
     private double price;
 
-    public Book(long code, String title, String author, String type, double price) {
+    public Book(long code, String title, String author, String format, double price) {
         this.setCode(code);
         this.setTitle(title);
         this.setAuthor(author);
-        this.setType(type);
+        this.setFormat(format);
         this.setPrice(price);
     }
 
@@ -20,9 +21,10 @@ public class Book {
     }
 
     public void setCode(long code) {
-        if (code > 0) {
-            this.code = code;
+        if (code <= 0) {
+            throw new IllegalArgumentException("Code must be greater than 0");
         }
+        this.code = code;
     }
 
     public String getTitle() {
@@ -30,9 +32,11 @@ public class Book {
     }
 
     public void setTitle(String title) {
-        if (title != null && !title.isBlank()) {
-            this.title = title;
+        Objects.requireNonNull(title, "Title cannot be null");
+        if (title.isBlank()) {
+            throw new IllegalArgumentException("Title cannot be blank");
         }
+        this.title = title;
     }
 
     public String getAuthor() {
@@ -40,21 +44,23 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        if (author != null && !author.isBlank()) {
-            this.author = author;
+        Objects.requireNonNull(author, "Author cannot be null");
+        if (author.isBlank()) {
+            throw new IllegalArgumentException("Author cannot be blank");
         }
+        this.author = author;
     }
 
-    public String getType() {
-        return type;
+    public String getFormat() {
+        return format;
     }
 
-    public void setType(String type) {
-        if (type != null
-                && !type.isBlank()
-                && (type.equals("ebook") || type.equals("paperback"))) {
-            this.type = type;
+    public void setFormat(String format) {
+        Objects.requireNonNull(format, "Format cannot be null");
+        if (!format.equals("ebook") && !format.equals("paperback") && !format.equals("hardback")) {
+            throw new IllegalArgumentException("Format must be 'ebook', 'paperback' or 'hardback'");
         }
+        this.format = format;
     }
 
     public double getPrice() {
@@ -62,9 +68,10 @@ public class Book {
     }
 
     public void setPrice(double price) {
-        if (price > 0 && price <= 2500) {
-            this.price = price;
+        if (price <= 0 || price > 2500) {
+            throw new IllegalArgumentException("Price must be between 0 (exclusive) and 2500");
         }
+        this.price = price;
     }
 
     @Override
@@ -73,7 +80,7 @@ public class Book {
                 .add("code=" + code)
                 .add("title='" + title + "'")
                 .add("author='" + author + "'")
-                .add("type='" + type + "'")
+                .add("format='" + format + "'")
                 .add("price=" + price)
                 .toString();
     }

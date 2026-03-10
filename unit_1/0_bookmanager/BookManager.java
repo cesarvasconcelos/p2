@@ -3,24 +3,25 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class BookManager {
     private List<Book> books;
-    private List<String> lines;
 
     public BookManager(String filePath) {
-        loadFileLines(filePath);
+        Objects.requireNonNull(filePath, "File path cannot be null");
+        List<String> lines = loadFileLines(filePath);
         buildBookList(lines);
     }
 
-    private void loadFileLines(String filePath) {
+    private List<String> loadFileLines(String filePath) {
         try {
-            this.lines = Files.readAllLines(Path.of(filePath));
+            return Files.readAllLines(Path.of(filePath));
         } catch (IOException e) {
-            throw new RuntimeException("Error loading data file", e);
+            throw new RuntimeException("Cannot load data file: " + filePath, e);
         }
     }
 
@@ -31,32 +32,33 @@ public class BookManager {
     }
 
     private Book parseLineToBook(String line) {
-        String[] parts = line.split(";");
+        String[] fields = line.split(";");
 
         return new Book(
-                Long.parseLong(parts[0]),
-                parts[1],
-                parts[2],
-                parts[3],
-                Double.parseDouble(parts[4])
+                Long.parseLong(fields[0]),
+                fields[1],
+                fields[2],
+                fields[3],
+                Double.parseDouble(fields[4])
         );
     }
 
     public void addBook(Book book) {
+        Objects.requireNonNull(book, "Book cannot be null");
         books.addLast(book);
     }
 
     public void removeBookBy(long code) {
-        books.removeIf(bookCodeIsEqualsTo(code));
+        books.removeIf(bookHasCode(code));
     }
 
     public Optional<Book> findBookBy(long code) {
         return books.stream()
-                .filter(bookCodeIsEqualsTo(code))
+                .filter(bookHasCode(code))
                 .findAny();
     }
 
-    private Predicate<Book> bookCodeIsEqualsTo(long code) {
+    private Predicate<Book> bookHasCode(long code) {
         return book -> book.getCode() == code;
     }
 }
