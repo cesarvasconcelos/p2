@@ -16,7 +16,7 @@ A disciplina aborda uma introdução ao paradigma orientado a objetos, estrutura
 - **Estruturas de Dados**: uso das coleções padrão do Java, mostrando como utilizar implementações já prontas das interfaces [**List**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html), [**Set**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html), [**Map**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html), [**Deque**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Deque.html) e [**Queue**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Queue.html) (pilha e fila), incluindo aquelas baseadas em árvore ([**TreeMap**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/TreeMap.html), [**TreeSet**](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/TreeSet.html)).
 - **Algoritmos Fundamentais**: estudo de algoritmos de pesquisa e ordenação de dados.
 
-⚠️ **Atenção!** Devido à extensão da linguagem Java, o conteúdo visto em sala de aula focará nos conceitos essenciais da disciplina. O aprofundamento dos detalhes técnicos e recursos adicionais da linguagem é de responsabilidade do estudante.</span>
+⚠️ **Atenção!** Devido à extensão da linguagem Java, o conteúdo visto em sala de aula focará nos conceitos essenciais da disciplina. O aprofundamento dos detalhes técnicos e recursos adicionais da linguagem é de responsabilidade do estudante.
 
 ## Material de Referência
 
