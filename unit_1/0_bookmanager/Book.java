@@ -76,12 +76,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Book.class.getSimpleName() + "[", "]")
-                .add("code=" + code)
-                .add("title='" + title + "'")
-                .add("author='" + author + "'")
-                .add("format='" + format + "'")
-                .add("price=" + price)
-                .toString();
+        return """
+               Book[code=%d, title='%s', author='%s', format='%s', price=%.2f]\
+               """.formatted(code, title, author, format, price);
     }
 }
