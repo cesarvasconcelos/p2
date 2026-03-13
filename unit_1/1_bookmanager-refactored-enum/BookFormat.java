@@ -1,3 +1,6 @@
+/**
+ * BookFormat is an enum that represents the format of a book.
+ */
 public enum BookFormat {
     EBOOK("ebook"),
     PAPERBACK("paperback"),
