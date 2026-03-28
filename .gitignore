@@ -202,3 +202,5 @@ local.properties
 #.project
 
 CLAUDE.MD
+PLAN.MD
+.claude/*
