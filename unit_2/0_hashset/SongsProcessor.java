@@ -3,10 +3,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Year;
 import java.util.Comparator;
-import java.util.Objects;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -78,6 +79,32 @@ public class SongsProcessor {
 
     public long countSongs() {
         return songs.size();
+    }
+
+    public long countArtists() {
+        return songs.stream()
+                .map(Song::getArtist)
+                .distinct()
+                .count();
+    }
+
+    public Optional<Song> findByCode(int code) {
+        return songs.stream()
+                .filter(s -> s.getCode() == code)
+                .findFirst();
+    }
+
+    public List<Song> findByArtist(String name) {
+        var lower = name.toLowerCase();
+        return songs.stream()
+                .filter(s -> s.getArtist().toLowerCase().contains(lower))
+                .toList();
+    }
+
+    public List<Song> findByYear(Year year) {
+        return songs.stream()
+                .filter(s -> s.getYear().equals(year))
+                .toList();
     }
 
     public Set<Song> findOldestSongs() {
