@@ -74,7 +74,7 @@ public class SongsProcessor {
 
             return new SongsProcessor(songs);
         } catch (IOException e) {
-            throw new UncheckedIOException(e);
+            throw new UncheckedIOException("Failed to read file: " + path, e);
         }
     }
 
