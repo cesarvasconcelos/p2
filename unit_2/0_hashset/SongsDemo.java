@@ -12,8 +12,12 @@ void main() {
     var processor = new SongsProcessor("worst-songs.txt");
 
     IO.println("Total unique songs : " + processor.countSongs());
+    IO.println("Total artists      : " + processor.countArtists());
     IO.println("Oldest songs       : " + processor.findOldestSongs());
     IO.println("Most recent songs  : " + processor.findMostRecentSongs());
+    IO.println("Find by code 1258  : " + processor.findByCode(1258));
+    IO.println("Find by artist ABBA: " + processor.findByArtist("ABBA"));
+    IO.println("Find by year 1977  : " + processor.findByYear(java.time.Year.of(1977)));
     IO.println("Artists            : " + processor.getArtists());
     IO.println("Grouped by artist  : " + processor.groupByArtist());
 }
