@@ -12,7 +12,7 @@ import java.util.Objects;
  * written and maintained by hand, following the contract defined in
  * <em>Effective Java</em> (Bloch, Item 10: Obey the general contract when overriding equals).
  *
- * <p>Compare this class with {@code 1_hashset/Song.java}, where a single {@code record}
+ * <p>Compare this class with {@code 1_hashset-refactored-record/Song.java}, where a single {@code record}
  * declaration replaces all of this code — with zero boilerplate.
  */
 public class Song {

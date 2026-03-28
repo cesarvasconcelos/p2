@@ -6,7 +6,7 @@
  * remove duplicates — which only works because those methods are correctly implemented.
  *
  * <p>After running this demo, open {@code Song.java} and count the lines needed just to
- * make equality work. Then compare with {@code 1_hashset/Song.java}.
+ * make equality work. Then compare with {@code 1_hashset-refactored-record/Song.java}.
  */
 void main() {
     var processor = new SongsProcessor("worst-songs.txt");
