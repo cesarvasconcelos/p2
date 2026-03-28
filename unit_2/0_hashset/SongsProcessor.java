@@ -3,6 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Year;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -39,7 +40,7 @@ public class SongsProcessor {
         return lines.stream()
                 .filter(line -> !line.isBlank())
                 .map(this::parseLine)
-                .collect(Collectors.toUnmodifiableSet());
+                .collect(Collectors.toCollection(HashSet::new));
     }
 
     private List<String> loadLines(String filePath) {
