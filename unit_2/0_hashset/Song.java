@@ -59,21 +59,20 @@ public class Song {
     /**
      * Two songs are equal if and only if their {@code code} fields match.
      *
-     * <p>This follows the contract from <em>Effective Java</em> (Bloch, Item 10):
+     * <p>Uses pattern matching for {@code instanceof} (JEP 394) while retaining
+     * {@code getClass()} for subclass safety (Effective Java, Bloch, Item 10):
      * <ol>
-     *   <li>Identity check — short-circuit if same object reference.
-     *   <li>Null check — return false immediately for null input.
+     *   <li>Null + type check — {@code instanceof} returns {@code false} for {@code null}
+     *       and for any type other than {@code Song}; also binds the pattern variable.
      *   <li>Class check — use {@code getClass()} because no subclass should redefine equality.
-     *   <li>Cast — safe after the class check.
      *   <li>Field comparison — compare only the identity field ({@code code}).
      * </ol>
      */
     @Override
     public boolean equals(Object other) {
-        if (this == other) return true;
-        if (other == null || getClass() != other.getClass()) return false;
-        Song song = (Song) other;
-        return code == song.code;
+        return other instanceof Song song
+            && getClass() == other.getClass()
+            && code == song.code;
     }
 
     /**
