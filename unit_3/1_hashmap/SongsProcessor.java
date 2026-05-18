@@ -24,9 +24,12 @@ import java.util.Set;
  *
  * <h2>Why HashMap instead of HashSet?</h2>
  * <p>In previous examples ({@code unit_2/0_hashset} etc.), songs were stored in a
- * {@link java.util.HashSet}. Finding a song by code required scanning every element — O(n).
- * A {@link HashMap} maps each code directly to its {@code Song}, giving <strong>O(1) average
- * lookup</strong>:
+ * {@link java.util.HashSet}. {@code HashSet.contains(element)} is O(1), but only when you
+ * have a full element whose {@code hashCode()} matches. When all you have is a code (an
+ * {@code int}), there is no field-based lookup API — the only option is a stream filter that
+ * visits every element: O(n). A {@link HashMap} solves this by making the code the
+ * <strong>key</strong>, so {@code songsMap.get(code)} is an O(1) hash probe — no field
+ * scanning at all:
  * <pre>
  *   Map&lt;Integer, Song&gt; songsMap
  *     1258 → Song[code=1258, title="You Light Up My Life", ...]
