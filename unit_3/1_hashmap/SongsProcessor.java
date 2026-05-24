@@ -238,6 +238,9 @@ public class SongsProcessor {
         for (var song : songsMap.values()) {
             // computeIfAbsent: "if this artist key is missing, create a new HashSet for it."
             // Returns the (existing or newly created) set so we can .add(song) in one shot.
+            // Syntax: computeIfAbsent(key, key -> newValue)
+            // _ replaces the "key" parameter (song.artist()) — not needed inside the lambda body
+            // Returns: the existing Set if the key was already present, or the newly created HashSet — ready for .add()
             result.computeIfAbsent(song.artist(), _ -> new HashSet<>()).add(song);
         }
         return Collections.unmodifiableMap(result);
@@ -270,6 +273,9 @@ public class SongsProcessor {
         for (var song : songsMap.values()) {
             // compute: if year is absent, count is null → start at 1.
             // If year is present, count holds the previous tally → increment.
+            // Syntax: compute(key, (key, currentValue) -> newValue)
+            // _ replaces the "key" parameter (song.year()) — not needed; count = currentValue (null when key is seen for the first time)
+            // Returns: the new value produced by the lambda; if the lambda returns null, the entry is removed from the map
             result.compute(song.year(), (_, count) -> count == null ? 1L : count + 1);
         }
         return Collections.unmodifiableMap(result);
@@ -400,6 +406,9 @@ public class SongsProcessor {
      */
     public Optional<Song> renameTitle(int code, String newTitle) {
         // computeIfPresent fires only if the key is present; returns the new value (or null).
+        // Syntax: computeIfPresent(key, (key, currentValue) -> newValue)
+        // _ replaces the "key" parameter (code) — not needed; existing = the Song currently mapped to that key
+        // Returns: the new Song if the key existed; null (map unchanged) if the key was absent
         var updated = songsMap.computeIfPresent(code, (_, existing) ->
                 new Song(existing.code(), newTitle, existing.artist(), existing.year()));
         return Optional.ofNullable(updated);
