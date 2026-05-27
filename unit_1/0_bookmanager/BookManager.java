@@ -29,6 +29,12 @@ public class BookManager {
         books = lines.stream()
                 .map(this::parseLineToBook)
                 .collect(Collectors.toCollection(ArrayList::new));
+
+        // Nota bibliografica: em Core Java, 14th Edition, o autor explica
+        // a preferencia por ArrayList em vez de Vector:
+        // "In even older versions of Java, programmers used the Vector class
+        // for dynamic arrays. However, the ArrayList class is more efficient,
+        // and there is no longer any good reason to use the Vector class."
     }
 
     private Book parseLineToBook(String line) {
